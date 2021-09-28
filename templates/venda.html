@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="card mx-6 mt-4">
+
+    <div class="columns">
+      <div class="column">
+        <div class="card-content ">
+          <div class="media">
+            <div class="media-content">
+              <a href="https://www.google.com/">
+                <p class="title is-4">APARTAMENTO 3/4</p>
+              </a>
+              <p class="subtitle is-6">RUA BEM ALI</p>
+            </div>
+          </div>
+        
+          <h6 class="title is-6 ">Valor do Imovel</h6>
+          <h6 class="subtitle is-6 mx-4">1000,85</h6>
+        
+          <h6 class="title is-6">Comissao</h6>
+          <h6 class="subtitle is-6 mx-4">5 %</h6>
+        
+          <h6 class="title is-6">Tipo</h6>
+          <h6 class="subtitle is-6 mx-4">APARTAMENTO</h6>
+        
+          <br/>
+        </div>
+      </div>
+      <div class="column">
+        <p class="subtitle is-6 mt-5">Pagamento</p>
+        <div class="select">
+          <select name='tipo'>
+            <option>A vista</option>
+            <option>180x</option>
+          </select>
+        </div>
+      </div>
+      <div class="column">
+        <p class="subtitle is-6 mt-5">Cliente</p>
+        <div class="select">
+          <select name='tipo'>
+            <option>Cliente 1</option>
+            <option>Cliente 2</option>
+            <option>Cliente 3</option>
+            <option>Cliente 4</option>
+          </select>
+        </div>
+        
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a class="card-footer-item button is-info is-rounded is-medium m-3">Finalizar</a>
+    </footer>
+  </div>
+</section>
+{% endblock %}

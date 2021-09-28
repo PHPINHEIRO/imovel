@@ -8,3 +8,9 @@ class HomePageView(TemplateView):
         context =  super().get_context_data(**kwargs)
         context['imoveis'] = Imovel.available.all()
         return context
+
+class VendaPageView(TemplateView):
+    template_name = 'venda.html'
+
+class RelatorioPageView(TemplateView):
+    template_name = 'relatorio.html'
