@@ -4,31 +4,36 @@
   <div class="container">
     <div class="columns is-multiline">
       <h3 class="subtitle is-3">Selecione o Imovel/Lote</h3>
-      <!-- {% for letter in object_list %}
-      <div class="column is-4-widescreen mb-6">
-        <a href="{% url 'letter-datail' letter.pk %}">
-          <article>
-            <div class="card" style="background-color: {{ letter.color }}">
-              <div class="card-content">
-                <p class="letter-text" style="color: {{ letter.text_color }}">
-                  {{ letter.message }}
-                </p>
-              </div>
-              <footer class="card-footer">
-                <p class="card-footer-item" style="color: {{ letter.text_color }}">
-                  <span style="color: {{ letter.text_color }}">
-                    Para: {{ letter.name }}
-                  </span>
-                </p>
-              </footer>
-            </div>
-          </article>
-        </a>
-      </div>
-      {% empty %}
-        <p>Não há mensagens</p>
-      {% endfor %} -->
     </div>
+
+      {% for imovel in imoveis %}
+      <div class="card mx-6 mt-4">
+        <div class="card-content ">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">{{imovel.descricao}}</p>
+              <p class="subtitle is-6">{{imovel.endereco}}</p>
+            </div>
+          </div>
+  
+          <h6 class="title is-6 ">Valor do Imovel</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.vlrimovel}}</h6>
+  
+          <h6 class="title is-6">Comissao</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.vlrcomissao}}</h6>
+  
+          <h6 class="title is-6">Tipo</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.tipo}}</h6>
+          
+          <br/>
+          <footer class="card-footer">
+            <p class="card-footer-item">Publicado em {{imovel.dtainclusao}}</p>
+          </footer>
+        </div>
+      </div>
+      {% endfor %}
+    
+  
   </div>
   <!-- <div class="container is-flex is-justify-content-space-between">
     <div>

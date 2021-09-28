@@ -1,5 +1,9 @@
 from django.db import models
 
+class AvailableManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=True)
+
 class Imovel(models.Model):
     STATUS = [
         (True,'Ativo'),
@@ -19,6 +23,9 @@ class Imovel(models.Model):
     tipo = models.CharField(name='tipo',verbose_name='Tipo',max_length=11,choices=TIPO)
     status = models.BooleanField(name='status',verbose_name='Status',choices=STATUS)
     
+    objects = models.Manager()
+    available = AvailableManager()
+
     class Meta():
         ordering = ('descricao','vlrimovel',)
 

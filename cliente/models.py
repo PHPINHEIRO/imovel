@@ -1,5 +1,9 @@
 from django.db import models
 
+class AvailableManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=True)
+
 class Cliente(models.Model):
 
     STATUS = [
@@ -13,6 +17,8 @@ class Cliente(models.Model):
     telefone = models.CharField(name='telefone',verbose_name='Telefone',max_length=15)
     dtainclusao = models.DateField(name='dtainclusao',verbose_name='Data Cadastro',auto_now_add=True)
     status = models.BooleanField(name='status',verbose_name='Status',choices=STATUS) 
+
+    available = AvailableManager()
     
     class Meta():
         ordering = ('nome','dtainclusao',)
