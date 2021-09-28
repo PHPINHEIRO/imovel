@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <h3 class="subtitle is-3">Selecione o Imovel/Lote</h3>
+      <!-- {% for letter in object_list %}
+      <div class="column is-4-widescreen mb-6">
+        <a href="{% url 'letter-datail' letter.pk %}">
+          <article>
+            <div class="card" style="background-color: {{ letter.color }}">
+              <div class="card-content">
+                <p class="letter-text" style="color: {{ letter.text_color }}">
+                  {{ letter.message }}
+                </p>
+              </div>
+              <footer class="card-footer">
+                <p class="card-footer-item" style="color: {{ letter.text_color }}">
+                  <span style="color: {{ letter.text_color }}">
+                    Para: {{ letter.name }}
+                  </span>
+                </p>
+              </footer>
+            </div>
+          </article>
+        </a>
+      </div>
+      {% empty %}
+        <p>Não há mensagens</p>
+      {% endfor %} -->
+    </div>
+  </div>
+  <!-- <div class="container is-flex is-justify-content-space-between">
+    <div>
+      {% if page_obj.has_previous %}
+      <a class="pagination-previous" href="?busca={{ busca }}&page=1">primeira</a>
+      <a class="pagination-previous" href="?busca={{ busca }}&page={{ page_obj.previous_page_number }}">anterior</a>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <a class="pagination-previous" href="?busca={{ busca }}&page={{ page_obj.next_page_number }}">próxima</a>
+      <a class="pagination-previous" href="?busca={{ busca }}&page={{ page_obj.paginator.num_pages }}">última</a>
+      {% endif %}
+    </div>
+    <div>
+      <p>
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+      </p>
+    </div>
+  </div> -->
+</section>
+{% endblock %}
