@@ -40,8 +40,8 @@ class VendaPageView(LoginRequiredMixin,View):
 
         id_cliente = request.POST.get('cliente_id')
         condicao_pagto = int(request.POST.get('condicao_pagto'))
-        valor_imovel = float(request.POST.get('valor_imovel'))
-        valor_comissao = float(request.POST.get('comissao'))
+        valor_imovel = request.POST.get('valor_imovel')
+        valor_comissao = request.POST.get('comissao')
 
         if id_cliente is None:
             return HttpResponseNotFound('Voce precisa fornecer um cliente')
@@ -61,8 +61,8 @@ class VendaPageView(LoginRequiredMixin,View):
         venda.cliente = cliente
         venda.vendedor = request.user
         venda.condicao_pagto = condicao_pagto
-        venda.valor_imovel = valor_imovel
-        venda.valor_comissao = valor_comissao
+        venda.valor_imovel = float(valor_imovel.replace(',','.'))
+        venda.valor_comissao = float(valor_comissao.replace(',','.'))
         venda.save()
 
         return HttpResponseRedirect(
