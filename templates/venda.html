@@ -1,28 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="section">
+  <form method="post" action="">
+    {% csrf_token %}
   <div class="card mx-6 mt-4">
-
     <div class="columns">
       <div class="column">
         <div class="card-content ">
           <div class="media">
             <div class="media-content">
-              <a href="https://www.google.com/">
-                <p class="title is-4">APARTAMENTO 3/4</p>
-              </a>
-              <p class="subtitle is-6">RUA BEM ALI</p>
+              <p class="title is-4">{{imovel.descricao}}</p>
+              <p class="subtitle is-6">{{imovel.endereco}}</p>
             </div>
           </div>
         
           <h6 class="title is-6 ">Valor do Imovel</h6>
-          <h6 class="subtitle is-6 mx-4">1000,85</h6>
+          <!-- <h6 class="subtitle is-6 mx-4" >{{imovel.valor_imovel}}</h6> -->
+            <input class="input is-6 mx-4" type="text" name='valor_imovel' value="{{ imovel.valor_imovel }}"></input>
         
           <h6 class="title is-6">Comissao</h6>
-          <h6 class="subtitle is-6 mx-4">5 %</h6>
+          <input class="input is-6 mx-4" type="text" name='comissao' value="{{ imovel.comissao }}"></input>
+          <!-- <h6 class="subtitle is-6 mx-4">{{imovel.comissao}}</h6> -->
         
           <h6 class="title is-6">Tipo</h6>
-          <h6 class="subtitle is-6 mx-4">APARTAMENTO</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.tipo}}</h6>
         
           <br/>
         </div>
@@ -30,28 +31,29 @@
       <div class="column">
         <p class="subtitle is-6 mt-5">Pagamento</p>
         <div class="select">
-          <select name='tipo'>
-            <option>A vista</option>
-            <option>180x</option>
+          <select name='condicao_pagto'>
+            {% for item in condicoes_pagto%}
+              <option value="{{ item.0 }}">{{ item.1 }}</option>
+            {% endfor %}
           </select>
         </div>
       </div>
       <div class="column">
         <p class="subtitle is-6 mt-5">Cliente</p>
         <div class="select">
-          <select name='tipo'>
-            <option>Cliente 1</option>
-            <option>Cliente 2</option>
-            <option>Cliente 3</option>
-            <option>Cliente 4</option>
+          <select name='cliente_id'>
+            {% for cliente in clientes %}
+            <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
+            {% endfor %}
           </select>
         </div>
         
       </div>
     </div>
     <footer class="card-footer">
-      <a class="card-footer-item button is-info is-rounded is-medium m-3">Finalizar</a>
+      <button type="submit" class="button is-info is-rounded">Finalizar</button>
     </footer>
   </div>
+  </form>
 </section>
 {% endblock %}

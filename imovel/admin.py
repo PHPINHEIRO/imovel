@@ -3,5 +3,5 @@ from .models import Imovel
 
 @admin.register(Imovel)
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('descricao','endereco','vlrimovel','vlrcomissao','dtainclusao','tipo','status')
+    list_display = ('descricao','endereco','valor_imovel','data_inclusao','tipo','status')
     

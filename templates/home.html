@@ -20,7 +20,7 @@
         <div class="card-content ">
           <div class="media">
             <div class="media-content">
-              <a href="https://www.google.com/">
+              <a href="{% url 'pages:venda' imovel.id %}">
                 <p class="title is-4">{{imovel.id}} - {{imovel.descricao}}</p>
               </a>
               <p class="subtitle is-6">{{imovel.endereco}}</p>
@@ -28,17 +28,17 @@
           </div>
   
           <h6 class="title is-6 ">Valor do Imovel</h6>
-          <h6 class="subtitle is-6 mx-4">{{imovel.vlrimovel}}</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.valor_imovel}}</h6>
   
           <h6 class="title is-6">Comissao</h6>
-          <h6 class="subtitle is-6 mx-4">{{imovel.vlrcomissao}}</h6>
+          <h6 class="subtitle is-6 mx-4">{{imovel.comissao}}</h6>
   
           <h6 class="title is-6">Tipo</h6>
           <h6 class="subtitle is-6 mx-4">{{imovel.tipo}}</h6>
 
           <br/>
           <footer class="card-footer">
-            <p class="card-footer-item">Publicado em {{imovel.dtainclusao}}</p>
+            <p class="card-footer-item">Publicado em {{imovel.data_inclusao}}</p>
           </footer>
         </div>
       </div>

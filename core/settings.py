@@ -138,5 +138,12 @@ AUTH_USER_MODEL = 'vendedor.Vendedor'
 
 JAZZMIN_SETTINGS = {
     "site_title": "Imoveis",
-    "site_header": "Acesso ao Sistema", 
+    "site_header": "Acesso ao Sistema",
+    "custom_links": {
+        "venda": [{
+            "name": "Realizar venda",
+            "url": "pages:imoveis",
+            "icon": "fas fa-shopping-basket"
+        }]
+    },
 }

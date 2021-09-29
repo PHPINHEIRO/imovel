@@ -1,6 +1,36 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 <section class="section">
-    <h1>relatorio</h1>
+    <h1>Relatório da venda</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th><abbr title="Position">Imovel</abbr></th>
+            <th>Vendedor</th>
+            <th><abbr title="Played">Cliente</abbr></th>
+            <th><abbr title="Won">Condição de pagamento</abbr></th>
+            <th><abbr title="Drawn">valor do Imovel</abbr></th>
+            <th><abbr title="Drawn">comissao</abbr></th>
+            <th><abbr title="Drawn">Data venda</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{venda.imovel}}</td>
+                <td>{{venda.vendedor}}</td>
+                <td>{{venda.cliente}}</td>
+                <td>{{venda.condicao_pagto}}</td>
+                <td>{{venda.valor_imovel}}</td>
+                <td>{{venda.valor_comissao}}</td>
+                <td>{{venda.data_inclusao}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <a href="{% url 'admin:venda_venda_change' venda %}">Veja detalhes no painel administrativo</a>
+
 </section>
 {% endblock %}
