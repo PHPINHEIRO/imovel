@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-jazzmin = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
